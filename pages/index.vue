@@ -1,14 +1,14 @@
 <script setup>
-import { useTodoStore } from '~/stores/todoStore';
-
-const todoStore = useTodoStore()
+useHead({
+  title: 'My Todos',
+  meta: [
+    { name: 'description', content: 'Todo list application' }
+  ]
+})
 </script>
 
 <template>
-    <main>
-        <div>
-            Hello Vue
-            <pre>{{ todoStore.todo }}</pre>
-        </div>
-    </main>
-  </template>
+  <Layout>
+    <TodoApp />
+  </Layout>
+</template>
