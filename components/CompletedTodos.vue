@@ -10,9 +10,9 @@ const completed = computed(() => store.todos.filter(todo => todo.completed))
 </script>
 
 <template>
-  <div class="completed">
+  <ListContainer>
     <div v-for="todo in completed" :key="todo.id" class="item">
       <Todo :todo="todo" />
     </div>
-  </div>
+  </ListContainer>
 </template>
