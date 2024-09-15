@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { v4 as uuidv4 } from 'uuid'
+
 import todoData from "../data/todo.json"
 
 export type Todo = {
@@ -8,10 +10,10 @@ export type Todo = {
     completed: boolean
 }
 
-let idCounter = 0
-
 export const useTodoStore = defineStore('todoStore', () => {
     const todos = ref<Todo[]>([]);
+    const storedValue = localStorage.getItem('idCounter')
+    let idCounter= storedValue !== null ? parseInt(storedValue, 10) : 1 
 
     function addTodo(title: string) {
         todos.value.push({
@@ -20,6 +22,7 @@ export const useTodoStore = defineStore('todoStore', () => {
           title,
           completed: false,
         });
+        localStorage.setItem('idCounter', idCounter.toString())
       }
 
     function editTodo(id: number, title: string) {
@@ -53,7 +56,7 @@ export const useTodoStore = defineStore('todoStore', () => {
   {
     persist: {
       storage: piniaPluginPersistedstate.localStorage(),
-      pick: ["todos"],
+      pick: ["todos", "idCounter"],
     },
   },
 )
