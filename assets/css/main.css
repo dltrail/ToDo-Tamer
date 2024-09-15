@@ -1,0 +1,7 @@
+.todoList {
+    @apply flex flex-col bg-red-300
+}
+
+.active {
+    @apply w-full transform transition duration-1000 scale-0
+}
