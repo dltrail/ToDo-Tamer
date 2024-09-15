@@ -11,7 +11,7 @@
 
 <style>
 .footer {
-  @apply absolute bottom-0 flex justify-center w-screen;
+  @apply flex justify-center w-screen;
 }
 
 .footerLink {
