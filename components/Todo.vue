@@ -53,7 +53,7 @@ function handleEdit(val) {
 </script>
 
 <template>
-  <div  class="todo" :class="{ 'active': isActive}">
+  <div class="border-[var(--primary-color)] border-2" :class="{ 'active': isActive }">
 
     <p>{{ todo.title }}</p>
     <div v-if="!isEditting">
@@ -77,4 +77,3 @@ function handleEdit(val) {
   </div>
 </template>
 
-<style></style>
