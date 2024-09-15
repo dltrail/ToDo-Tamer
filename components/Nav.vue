@@ -12,7 +12,7 @@ const links = [
     label: "todos",
     icon: "i-heroicons-home",
     to: "/",
-    // badge: badgeCount
+    // badge: `${badgeCount.value}`
   },
   {
     label: "Completed",
@@ -24,18 +24,7 @@ const links = [
 </script>
 
 <template>
-  <!-- <nav class="border-b border-gray-200 dark:border-gray-800"> -->
-    <!-- <NuxtLink to="/"> 
-        <UBadge :label="badgeCount" />
-        Todos
-         </NuxtLink>
-    <NuxtLink to="/completed">
-      <UIcon name="i-heroicons-check" class="w-5 h-5" />
-      completed
-    </NuxtLink> -->
 
-
-  <!-- </nav> -->
   <UHorizontalNavigation :links="links" />
 
 </template>
