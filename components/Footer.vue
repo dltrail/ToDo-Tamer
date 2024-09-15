@@ -3,15 +3,14 @@
     <p>
       Designed and Dev'ed by
       <NuxtLink class="footerLink" to="https://github.com/dltrail"
-        >D Trail</NuxtLink
-      >
+        >D Trail</NuxtLink>
     </p>
   </footer>
 </template>
 
 <style>
 .footer {
-  @apply flex justify-center w-screen;
+  @apply flex justify-center w-screen text-black text-xs;
 }
 
 .footerLink {

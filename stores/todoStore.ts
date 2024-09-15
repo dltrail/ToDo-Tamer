@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
-import { v4 as uuidv4 } from 'uuid'
 
-import todoData from "../data/todo.json"
+// import todoData from "../data/todo.json"
 
 export type Todo = {
     userId: number,

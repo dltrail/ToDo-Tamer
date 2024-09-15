@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
---primary-color: #22C55E;
---accent-color: #22C55E;
---primary-button-color: #22C55E;
+--primary-color: #F6AD8D;
+--accent-color: #FEF0E7;
+--primary-button-color: #5A8A60;
+--text-color: #2C3E50;
+--secondary-text-color: #bbbbbb;
+--header-height: 160px
+}
+
+body {
+    @apply overflow-hidden
 }
 
 .active {

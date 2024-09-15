@@ -9,6 +9,6 @@ useHead({
 
 <template>
   <Layout>
-    <TodoApp />
+    <TodoList />
   </Layout>
 </template>

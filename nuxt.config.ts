@@ -8,5 +8,5 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     "@nuxt/image"
   ],
-  ssr: false
+  ssr: false,
 });

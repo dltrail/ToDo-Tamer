@@ -10,19 +10,16 @@ const completedTodos = computed(() =>
 </script>
 
 <template>
-
-  <ListContainer class="homeList">
-      <Todo v-if="todos.length > 0"
+  <ListContainer>
+      <TodoItem v-if="todos.length > 0"
       v-for="todo in completedTodos"
       :key="todo.id" :todo="todo" />
     <div v-else>
-      <p>No todos available.</p>
+      <p>No todos available</p>
     </div>
   </ListContainer>
 </template>
 
 <style>
-.homeList{
-  @apply mt-[48px]
-}
+
 </style>

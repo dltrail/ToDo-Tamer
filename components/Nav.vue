@@ -25,6 +25,6 @@ const links = [
 
 <template>
 
-  <UHorizontalNavigation :links="links" />
+  <UHorizontalNavigation :links="links" class="justify-center"/>
 
 </template>
