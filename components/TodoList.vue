@@ -1,19 +1,23 @@
 <script setup>
-import { useTodoStore } from "~/stores/todoStore";
-import { storeToRefs } from "pinia";
+import { computed } from 'vue';
+import { useTodoStore } from '~/stores/todoStore';
+import { storeToRefs } from 'pinia';
 
 const store = useTodoStore();
 const { todos } = storeToRefs(store);
+
 const completedTodos = computed(() =>
-  store.todos.filter((todo) => todo.completed !== true)
+  todos.value.filter(todo => !todo.completed)
 );
 </script>
 
 <template>
   <ListContainer>
-      <TodoItem v-if="todos.length > 0"
-      v-for="todo in completedTodos"
-      :key="todo.id" :todo="todo" />
+     <ul v-if="todos.length > 0">
+      <li v-for="todo in completedTodos" :key="todo.id" ><TodoItem 
+      
+      :todo="todo" /></li>
+     </ul>
     <div v-else>
       <p>No todos available</p>
     </div>
@@ -21,5 +25,7 @@ const completedTodos = computed(() =>
 </template>
 
 <style>
-
+li {
+  @apply mb-2;
+}
 </style>

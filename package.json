@@ -25,6 +25,9 @@
     "vue": "latest"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@testing-library/vue": "^8.1.0",
+    "vitest": "^2.1.1",
+    "vue-test-utils": "^1.0.0-beta.11"
   }
 }

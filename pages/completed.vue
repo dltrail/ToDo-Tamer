@@ -24,15 +24,11 @@ const handleConfirmBtnClick = () => {
 
 <template>
   <Layout>
-
-          <UButton
+          <button
             class="clearBtn"
             @click="handleToggleModalVisibility"
-            :disabled="completed.length === 0"
-            :ui="{
-     base: 'focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-55 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0',
-    }"
-            >Clear completed</UButton
+            :class="completed.length === 0 ? 'disabled': ''"
+            > <UIcon name="i-heroicons-trash" class="w-4 h-4 text-[var(--primary-button-color)]" /> Clear Completed Todos</button
           >
           <CompletedTodosList />
           <Modal
@@ -59,6 +55,13 @@ const handleConfirmBtnClick = () => {
 }
 
 .clearBtn {
-  @apply m-2 mr-[30px] absolute right-2;
+  @apply m-2 md:mr-[30px] absolute right-2 text-xs  border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle;
 }
+
+.disabled{
+  @apply pointer-events-none opacity-50
+}
+/* .active{
+  @apply  
+} */
 </style>

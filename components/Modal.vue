@@ -1,41 +1,58 @@
 <template>
-  <UModal
-    class="modal"
-    :ui="{
-      strategy: 'override',
-      container: 'flex min-h-full items-center justify-center text-center',
-    }"
-  >
-    <div class="modalInner">
-      <p class="modalMsg">Are you sure you want to clear all your todo's</p>
-      <div class="modalBtnGroup" size="sm" orientation="horizontal">
-        <UButton class="cancelbutton" variant="outline"@click="$emit('toggleModal')"
-          >Cancel</UButton
-        >
-        <UButton class="acceptbutton" @click="$emit('acceptModal')" variant="solid"
-          >confirm</UButton
-        >
+    <UModal
+      class="modal"
+      :ui="{
+        strategy: 'override',
+        container: 'flex min-h-full items-center justify-center text-center',
+      }"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
+      <div class="modal__inner">
+        <p id="modal-description" class="modal__message">
+          Are you sure you want to clear all your todos?
+        </p>
+        <div class="modal__button-group" size="sm" orientation="horizontal">
+          <button
+            class="button--cancel"
+            variant="outline"
+            @click="$emit('toggleModal')"
+            aria-label="Cancel"
+          >
+            Cancel
+          </button>
+          <button
+            class="button--accept"
+            @click="$emit('acceptModal')"
+            variant="solid"
+            aria-label="Confirm"
+          >
+            Confirm
+          </button>
+        </div>
       </div>
-    </div>
-  </UModal>
-</template>
+    </UModal>
+  </template>
+  
 
 <style>
-.modalInner {
-    @apply flex flex-col justify-center text-center items-center
-  
+.modal__inner {
+  @apply h-40 flex flex-col justify-center items-center text-center;
 }
-.modalMsg{
-        @apply text-[var(--text-color)] mb-8
-    }
-    .modalBtnGroup{
-        @apply flex gap-4
 
-    }
-    /* .cancelbutton{
-        @apply bg-white text-[var(--primary-color)] hover:text-white  hover:bg-[var(--primary-color)]
-    }
-    .acceptbutton{
-        @apply bg-[var(--primary-color)] text-white hover:text-white hover:bg-[var(--primary-color)]
-    } */
+.modal__message {
+  @apply text-[var(--text-color)] mb-8;
+}
+
+.modal__button-group {
+  @apply flex gap-4;
+}
+
+.button--accept {
+  @apply border p-2 bg-[var(--primary-button-color)] rounded-md text-white hover:opacity-50 text-sm;
+}
+
+.button--cancel {
+  @apply border p-2 text-[var(--primary-button-color)] rounded-md bg-white hover:opacity-50 text-sm;
+}
 </style>

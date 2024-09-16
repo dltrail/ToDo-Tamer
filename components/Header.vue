@@ -1,19 +1,20 @@
 <template>
-    <header>
-    <h1>Task Master</h1>
+  <header role="banner">
+    <h1>Todo Tamer</h1>
     <p>Wrangle Your To-Do List Like a Pro!</p>
   </header>
 </template>
 
 <style>
 header {
-  @apply fixed w-screen text-center top-0 translate-x-[-50%] left-1/2 bg-white z-50
-}
-h1 {
-  @apply text-6xl text-center my-6 text-[var(--primary-color)];
+  @apply fixed w-screen top-0 left-1/2 transform -translate-x-1/2 bg-white z-50 text-center;
 }
 
-header p {
-  @apply text-base text-center my-6 text-[var(--text-color)];
+h1 {
+  @apply text-6xl my-6 text-[#CD4748];
+}
+
+p {
+  @apply text-base my-2 text-[var(--text-color)];
 }
 </style>

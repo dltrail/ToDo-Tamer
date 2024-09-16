@@ -1,67 +1,70 @@
 import { defineStore } from "pinia";
 
-// import todoData from "../data/todo.json"
-
 export type Todo = {
-    userId: number,
-    id: number,
-    title: string
-    completed: boolean
-}
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+};
 
 export const useTodoStore = defineStore('todoStore', () => {
     const todos = ref<Todo[]>([]);
-    const storedValue = localStorage.getItem('idCounter')
-    let idCounter= storedValue !== null ? parseInt(storedValue, 10) : 1 
+    const storedValue = localStorage.getItem('idCounter');
+    let idCounter = storedValue ? parseInt(storedValue, 10) : 1;
 
-    function addTodo(title: string) {
+    // Utility function for persisting idCounter
+    function saveIdCounter() {
+        localStorage.setItem('idCounter', idCounter.toString());
+    }
+
+    // Add a new todo
+    const addTodo = (title: string) => {
         todos.value.push({
-          id: idCounter++,
-          userId: 0,
-          title,
-          completed: false,
+            id: idCounter++,
+            userId: 0,
+            title,
+            completed: false,
         });
-        localStorage.setItem('idCounter', idCounter.toString())
-      }
+        saveIdCounter();
+    };
 
-    function editTodo(id: number, title: string) {
-        const updatedTodos = todos.value;
-        const todoToUpdate = todos.value.find((todo) => todo.id === id)
-        const indexOfTodoToUpdate = todos.value.findIndex((todo) => todo.id === id)
-
-        if(todoToUpdate){
-            updatedTodos[indexOfTodoToUpdate].title = title
+    // Edit an existing todo
+    const editTodo = (id: number, title: string) => {
+        const todoIndex = todos.value.findIndex(todo => todo.id === id);
+        if (todoIndex !== -1) {
+            todos.value[todoIndex].title = title;
         }
+    };
 
-        // todos.value = updatedTodos
-    }
+    // Delete a todo
+    const deleteTodo = (id: number) => {
+        todos.value = todos.value.filter(todo => todo.id !== id);
+    };
 
-    function deleteTodo(id: number) {
-        todos.value = todos.value.filter((todo) => todo.id !== id)
-    }
-
-    function toggleTodoCompleted(idToFind: number) {
-        const todoToToggle = todos.value.find((todo) => todo.id === idToFind)
-        
-        if(todoToToggle){
-            todoToToggle.completed =!todoToToggle.completed
-            console.log(todoToToggle)
+    // Toggle todo completed status
+    const toggleTodoCompleted = (id: number) => {
+        const todo = todos.value.find(todo => todo.id === id);
+        if (todo) {
+            todo.completed = !todo.completed;
         }
-    }
+    };
 
-    function clearCompletedTodos() {
-      console.log("clearing")
-      todos.value = todos.value.filter((todo) => !todo.completed); 
-    }
+    // Clear completed todos
+    const clearCompletedTodos = () => {
+        todos.value = todos.value.filter(todo => !todo.completed);
+    };
 
-    return {todos, addTodo, editTodo, deleteTodo, toggleTodoCompleted, clearCompletedTodos}
-
-
-},
-  {
+    return {
+        todos, 
+        addTodo, 
+        editTodo, 
+        deleteTodo, 
+        toggleTodoCompleted, 
+        clearCompletedTodos
+    };
+}, {
     persist: {
-      storage: piniaPluginPersistedstate.localStorage(),
-      pick: ["todos", "idCounter"],
+        storage: piniaPluginPersistedstate.localStorage(),
+        pick: ["todos", "idCounter"],
     },
-  },
-)
+});
