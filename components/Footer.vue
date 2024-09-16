@@ -9,7 +9,7 @@
     </footer>
   </template>
   
-  <style>
+  <style scoped>
   .footer {
     @apply flex justify-center w-full text-black text-xs;
   }

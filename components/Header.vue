@@ -5,7 +5,7 @@
   </header>
 </template>
 
-<style>
+<style scoped>
 header {
   @apply fixed w-screen top-0 left-1/2 transform -translate-x-1/2 bg-white z-50 text-center;
 }

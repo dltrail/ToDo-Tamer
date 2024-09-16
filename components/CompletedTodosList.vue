@@ -21,8 +21,11 @@ const completed = computed(() => store.todos.filter((todo) => todo.completed));
   </div>
 </template>
 
-<style>
-.msg {
-  @apply text-center mt-20 text-[var(--secondary-text-color)];
+<style scoped>
+ul {
+  @apply xl:mx-20;
+}
+li {
+  @apply mb-2;
 }
 </style>

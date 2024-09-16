@@ -104,15 +104,15 @@ function saveEdit(id) {
   </div>
 </template>
 
-<style>
+<style scoped>
 .todo-item {
-  @apply border-[var(--secondary-text-color)] border w-[90vw] md:w-[unset] p-5 relative flex flex-row shadow-sm;
+  @apply border-[var(--primary-color)] p-5 border w-full  relative flex flex-row shadow-sm rounded-lg;
 }
 .todo-title {
-  @apply w-[85%] text-left;
+  @apply w-[86%] text-left;
 }
 .todo-checkbox-container {
-  @apply absolute bottom-2 text-center right-[10px] gap-2 flex align-middle z-50;
+  @apply absolute bottom-2 text-center right-[10px] gap-2 flex align-middle;
 }
 .edit-form {
   @apply flex flex-col z-50 w-[100%] justify-end;

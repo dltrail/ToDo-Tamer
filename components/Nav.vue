@@ -26,12 +26,14 @@ const links = [
 </script>
 
 <template>
-  <UHorizontalNavigation :links="links" class="horizontal-navigation"/>
+  <UHorizontalNavigation :links="links" class="horizontal-navigation" />
 </template>
 
 <style scoped>
 .horizontal-navigation {
-  display: flex;
-  justify-content: center;
+ @apply flex
+  justify-center
+  relative
+  mt-8
 }
 </style>

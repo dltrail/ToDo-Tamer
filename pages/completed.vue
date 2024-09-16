@@ -24,24 +24,28 @@ const handleConfirmBtnClick = () => {
 
 <template>
   <Layout>
-          <button
-            class="clearBtn"
-            @click="handleToggleModalVisibility"
-            :class="completed.length === 0 ? 'disabled': ''"
-            > <UIcon name="i-heroicons-trash" class="w-4 h-4 text-[var(--primary-button-color)]" /> Clear Completed Todos</button
-          >
-          <CompletedTodosList />
-          <Modal
-            v-model="isOpen"
-            class="modal"
-            @toggleModal="handleToggleModalVisibility"
-            @acceptModal="handleConfirmBtnClick"
-          />
-   
+    <button
+      class="clearBtn"
+      @click="handleToggleModalVisibility"
+      :class="completed.length === 0 ? 'disabled' : ''"
+    >
+      <UIcon
+        name="i-heroicons-trash"
+        class="w-4 h-4 text-[var(--primary-button-color)]"
+      />
+      Clear All
+    </button>
+    <CompletedTodosList />
+    <Modal
+      v-model="isOpen"
+      class="modal"
+      @toggleModal="handleToggleModalVisibility"
+      @acceptModal="handleConfirmBtnClick"
+    />
   </Layout>
 </template>
 
-<style>
+<style scoped>
 .modal {
   @apply w-96 items-center;
 }
@@ -55,11 +59,11 @@ const handleConfirmBtnClick = () => {
 }
 
 .clearBtn {
-  @apply m-2 md:mr-[30px] absolute right-2 text-xs  border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle;
+  @apply m-2 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto text-xs border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle md:top-[125px];
 }
 
-.disabled{
-  @apply pointer-events-none opacity-50
+.disabled {
+  @apply pointer-events-none opacity-50;
 }
 /* .active{
   @apply  

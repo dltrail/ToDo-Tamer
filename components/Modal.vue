@@ -35,7 +35,10 @@
   </template>
   
 
-<style>
+<style scoped>
+.modal {
+  @apply z-50
+}
 .modal__inner {
   @apply h-40 flex flex-col justify-center items-center text-center;
 }

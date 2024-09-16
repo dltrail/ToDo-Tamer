@@ -21,7 +21,7 @@
 
 <style scoped>
 .main {
-  @apply md:min-h-[calc(96vh-var(--header-height))] flex flex-col-reverse md:flex-row mt-[var(--header-height)] overflow-hidden;
+  @apply min-h-[calc(96vh-var(--header-height))] flex flex-col-reverse md:flex-row mt-[var(--header-height)] md:overflow-hidden justify-end;
 }
 
 .leftLayout {

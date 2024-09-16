@@ -19,12 +19,15 @@ const completedTodos = computed(() =>
       :todo="todo" /></li>
      </ul>
     <div v-else>
-      <p>No todos available</p>
+      <p class="msg">Create your first todo </p>
     </div>
   </ListContainer>
 </template>
 
-<style>
+<style scoped>
+ul {
+  @apply xl:mx-20;
+}
 li {
   @apply mb-2;
 }

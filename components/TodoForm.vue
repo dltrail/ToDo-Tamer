@@ -41,10 +41,10 @@ function handleAdd(val) {
 }
 
 .form-input {
-  @apply w-96 border rounded-lg px-2 text-sm shadow-sm;
+  @apply w-[80%] md:w-[65%] border  px-2 text-sm shadow-sm p-5 rounded-lg;
 }
 
 .submit-button {
-  @apply border p-2 bg-[var(--primary-button-color)] rounded-md text-white hover:opacity-50 text-sm shadow-sm;
+  @apply border p-2 bg-[var(--primary-color)]  text-white hover:opacity-50 text-sm shadow-sm rounded-lg;
 }
 </style>
