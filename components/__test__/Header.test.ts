@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/vue';
-import Header from './Header.vue'; // Adjust the import based on your file structure
+import '@testing-library/jest-dom'; // Import jest-dom matchers
+import Header from '../Header.vue'; // Adjust the import based on your file structure
 
 describe('Header', () => {
   it('renders the header with correct content', () => {
