@@ -1,14 +1,16 @@
 <script setup>
-    const props = defineProps({
-  bodyText: {
-    type: String,
-    required: true,
-  },
-});
+//     const props = defineProps({
+//   bodyText: {
+//     type: String,
+//     required: true,
+//   },
+// });
 </script>
 
 <template>
-   <div class="msg">{{ bodyText }}</div>
+   <div class="msg">
+   <slot/>
+   </div>
 </template>
   
 
