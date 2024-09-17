@@ -16,9 +16,7 @@ const completed = computed(() => store.todos.filter((todo) => todo.completed));
       </li>
     </ul>
   </ListContainer>
-  <div v-else class="noTodos">
-    <p class="msg">You haven't completed any todos yet!</p>
-  </div>
+  <EmptyList v-else bodyText="You haven't completed any todos yet!"/>
 </template>
 
 <style scoped>

@@ -19,7 +19,7 @@ const completedTodos = computed(() =>
       :todo="todo" /></li>
      </ul>
     <div v-else>
-      <p class="msg">Create your first todo </p>
+    <EmptyList bodyText="Create your first todo"/>
     </div>
   </ListContainer>
 </template>

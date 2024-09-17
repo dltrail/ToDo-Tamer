@@ -19,7 +19,3 @@ body {
 .active {
     @apply w-full transform transition duration-1000 scale-0
 }
-
-.msg {
-    @apply text-center mt-20 text-[var(--secondary-text-color)];
-  }
