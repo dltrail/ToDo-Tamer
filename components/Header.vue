@@ -1,6 +1,6 @@
 <template>
   <header role="banner">
-    <h1>Todo Tamer</h1>
+    <h1>To-Do Tamer</h1>
     <p>Wrangle Your To-Do List Like a Pro!</p>
   </header>
 </template>
