@@ -1,12 +1,3 @@
-<script setup>
-//     const props = defineProps({
-//   bodyText: {
-//     type: String,
-//     required: true,
-//   },
-// });
-</script>
-
 <template>
    <div class="msg">
    <slot/>
