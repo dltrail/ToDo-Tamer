@@ -1,17 +1,21 @@
+<script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+</script>
 <template>
   <Header />
 
   <main class="main">
     <div class="leftLayout">
       <NuxtImg
-        class="tamerImg"
         src="/task-tamer.svg"
         alt="Task Tamer Graphic"
         loading="lazy"sd
       />
     </div>
     <div class="rightLayout">
-      <TodoForm />
+      <TodoForm :class="route.path === '/'? '' : 'hide'" />
       <Nav />
       <slot />
     </div>
@@ -20,6 +24,10 @@
 </template>
 
 <style scoped>
+
+.hide {
+  @apply hidden
+}
 .main {
   @apply min-h-[calc(96vh-var(--header-height))] flex flex-col-reverse md:flex-row mt-[var(--header-height)] md:overflow-hidden justify-end;
 }
