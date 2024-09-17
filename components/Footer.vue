@@ -11,7 +11,7 @@
   
   <style scoped>
   .footer {
-    @apply flex justify-center w-full text-black text-xs;
+    @apply flex justify-center w-full text-black text-xs mb-6;
   }
   
   .footerLink {
