@@ -13,9 +13,7 @@ function saveEdit() {
   title.value = "";
 }
 
-function handleAdd(val) {
-  title.value = val;
-}
+
 </script>
 
 <template>
@@ -41,10 +39,10 @@ function handleAdd(val) {
 }
 
 .form-input {
-  @apply w-[80%] md:w-[65%] border  px-2 text-sm shadow-sm p-5 rounded-lg;
+  @apply w-[80%] md:w-[65%] border-2  px-2 text-sm shadow-sm p-5 rounded-lg border-[var(--accent-color-2)] bg-[var(--accent-color)] text-white outline-[white] placeholder-white;
 }
 
 .submit-button {
-  @apply border p-2 bg-[var(--primary-color)]  text-white hover:opacity-50 text-sm shadow-sm rounded-lg;
+  @apply border p-2 bg-[var(--accent-color-2)]  text-white hover:bg-white hover:text-[var(--accent-color-2)] hover:border-[var(--accent-color-2)] text-sm shadow-sm rounded-lg;
 }
 </style>
