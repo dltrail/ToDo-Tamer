@@ -4,11 +4,7 @@ import { useTodoStore } from "~/stores/todoStore";
 
 const localStore = useTodoStore();
 const title = ref("");
-const isFocused = ref(false);
 
-function handleFormFocus() {
-  isFocused.value = true;
-}
 
 function saveEdit() {
   if (title.value.trim().length === 0) {
