@@ -42,7 +42,7 @@ function saveEdit(id) {
 
 <template>
   <div class="todo-item" :class="{ active: isActive, strike: todo.completed }">
-    <div v-if="!isEditting" class="flex items-center w-full">
+    <div v-if="!isEditting" class="todo-item-content">
       <p class="todo-title">{{ todo.title }}</p>
 
       <div class="todo-checkbox-container">
@@ -63,7 +63,7 @@ function saveEdit(id) {
           :disabled="todo.completed"
           aria-label="Edit Todo"
         >
-          <UIcon name="i-heroicons-pencil-square" class="w-5 h-5 text-[var(--accent-color-2)]" />
+          <UIcon name="i-heroicons-pencil-square" class="w-4 h-4 text-[var(--accent-color-2)]" />
         </UButton>
         <UButton
           color="white"
@@ -71,7 +71,7 @@ function saveEdit(id) {
           @click="handleTodoDelete(todo.id)"
           aria-label="Delete Todo"
         >
-          <UIcon name="i-heroicons-trash" class="w-5 h-5 text-[var(--accent-color)]" />
+          <UIcon name="i-heroicons-trash" class="w-4 h-4 text-[var(--accent-color)]" />
         </UButton>
       </div>
     </div>
@@ -106,13 +106,13 @@ function saveEdit(id) {
 
 <style scoped>
 .todo-item {
-  @apply border-[var(--primary-color)] p-5 border w-full  relative flex flex-row shadow-sm rounded-lg;
+  @apply border-[var(--primary-color)] p-5 border w-full  relative flex flex-col md:flex-row shadow-sm rounded-lg;
 }
 .todo-title {
   @apply w-[86%] text-left;
 }
 .todo-checkbox-container {
-  @apply absolute bottom-2 text-center right-[10px] gap-2 flex align-middle;
+  @apply absolute bottom-2 text-center md:right-[10px] gap-2 flex align-middle;
 }
 .edit-form {
   @apply flex flex-col z-50 w-[100%] justify-end;
@@ -121,7 +121,7 @@ function saveEdit(id) {
   @apply flex justify-end mt-2;
 }
 .edit-input {
-  @apply w-[100%] h-16 border px-2 border border-[var(--accent-color)];
+  @apply w-[100%] h-16 border px-2 border-[var(--accent-color)];
 }
 .button--accept {
   @apply border p-2 bg-[var(--accent-color-2)] rounded-md text-white hover:opacity-50 text-sm;
@@ -130,7 +130,7 @@ function saveEdit(id) {
   @apply border p-2 text-[var(--accent-color-2)] rounded-md bg-white hover:opacity-50 text-sm;
 }
 .action-buttons {
-  @apply mb-4;
+  @apply mb-4 flex sm:mt-2;
 }
 .todo-item.strike p {
   @apply line-through;
@@ -140,5 +140,9 @@ function saveEdit(id) {
 }
 :disabled {
   @apply hidden
+}
+
+.todo-item-content{
+ @apply flex flex-col gap-2 md:flex-row items-center w-full
 }
 </style>
