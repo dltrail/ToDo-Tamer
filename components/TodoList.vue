@@ -12,14 +12,15 @@ const completedTodos = computed(() =>
 </script>
 
 <template>
-  <ListContainer>
-     <ul v-if="todos.length > 0">
-      <li v-for="todo in completedTodos" :key="todo.id" ><TodoItem 
-      
-      :todo="todo" /></li>
+  <ListContainer v-if="todos.length > 0">
+     <ul>
+      <li v-for="todo in completedTodos" :key="todo.id" >
+      <TodoItem 
+      :todo="todo" />
+      </li>
      </ul>
-    <EmptyList v-else>Create your first todo</EmptyList>
   </ListContainer>
+  <EmptyList v-else>Create your first todo</EmptyList>
 </template>
 
 <style scoped>

@@ -13,22 +13,19 @@
           Are you sure you want to clear all your todos?
         </p>
         <div class="modal__button-group" size="sm" orientation="horizontal">
-          <button
+          <Button
             class="button--cancel"
-            variant="outline"
             @click="$emit('toggleModal')"
             aria-label="Cancel"
+            :disabled="false"
           >
             Cancel
-          </button>
-          <button
-            class="button--accept"
+          </Button>
+          <Button class="button--accept"
             @click="$emit('acceptModal')"
-            variant="solid"
-            aria-label="Confirm"
-          >
-            Confirm
-          </button>
+            :disabled="false"
+            aria-label="Confirm">            Confirm
+          </Button>
         </div>
       </div>
     </UModal>

@@ -1,18 +1,38 @@
+<script setup>
+const isDisabled = ref(true);
+const hasIcon = ref(true)
+
+const props = defineProps({
+  iconName: {
+    type: String,
+    required: false,
+  },
+});
+</script>
+
 <template>
-    <button
-      class="clearBtn"
-      @click="$emit('handleToggleModalVisibility')"
-      :class="completed.length === 0 ? 'disabled' : ''"
-    >
-      <UIcon
-        name="i-heroicons-trash"
-        class="w-4 h-4 text-[var(--primary-button-color)]"
+  <button class="button" :disabled="isDisabled">
+    <UIcon 
+    v-if="iconName"
+        :name="props.iconName"
+        class="button-icon"
       />
-      Clear All
-    </button>
+     
+<span><slot /></span>
+  </button>
 </template>
-  
 
 <style scoped>
+.button {
+  @apply text-white px-4 text-xs border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle
+ py-2 flex gap-2 justify-center items-center;
+}
 
+.button-icon {
+@apply w-4 h-4 text-[var(--primary-button-color)] align-middle
+}
+
+:disabled {
+  @apply pointer-events-none opacity-50;
+}
 </style>

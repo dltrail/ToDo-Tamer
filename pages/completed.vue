@@ -7,7 +7,6 @@ useHead({
 import CompletedTodosList from "~/components/CompletedTodosList.vue";
 import { useTodoStore } from "~/stores/todoStore";
 const store = useTodoStore();
-const { todos } = storeToRefs(store);
 const isOpen = ref(false);
 const completed = computed(() => store.todos.filter((todo) => todo.completed));
 
@@ -24,17 +23,12 @@ const handleConfirmBtnClick = () => {
 
 <template>
   <Layout>
-    <button
-      class="clearBtn"
-      @click="handleToggleModalVisibility"
-      :class="completed.length === 0 ? 'disabled' : ''"
-    >
-      <UIcon
-        name="i-heroicons-trash"
-        class="w-4 h-4 text-[var(--primary-button-color)]"
-      />
-      Clear Completed ToDo'
-    </button>
+    <Button 
+    id="clear-button"
+    :disabled="completed.length === 0"
+    @click="handleToggleModalVisibility"
+    iconName="i-heroicons-trash"
+    ><span>Clear Completed ToDo</span></Button>
     <CompletedTodosList />
     <Modal
       v-model="isOpen"
@@ -58,14 +52,7 @@ const handleConfirmBtnClick = () => {
   @apply p-4  text-gray-50 h-96;
 }
 
-.clearBtn {
-  @apply mt-8 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto text-xs border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle md:top-[125px];
+#clear-button {
+  @apply mt-8 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto md:top-[125px] relative left-1/2 transform -translate-x-1/2;
 }
-
-.disabled {
-  @apply pointer-events-none opacity-50;
-}
-/* .active{
-  @apply  
-} */
 </style>

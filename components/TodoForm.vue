@@ -27,7 +27,8 @@ function saveEdit() {
         name="title"
         placeholder="Enter todo"
       />
-      <button class="submit-button" type="submit">Add Todo</button>
+      <Button class="submit-button" :disabled="false" type="submit">
+      submit</Button>
     </form>
   </div>
 </template>
@@ -42,11 +43,11 @@ function saveEdit() {
 }
 
 .submit-button {
-  @apply border p-2 bg-[var(--accent-color-2)]  text-white hover:bg-white hover:text-[var(--accent-color-2)] hover:border-[var(--accent-color-2)] text-sm shadow-sm rounded-lg;
+  @apply p-2 bg-[var(--accent-color-2)]  text-white hover:bg-white hover:text-[var(--accent-color-2)] hover:border-[var(--accent-color-2)] text-sm shadow-sm;
 }
 
 input::placeholder {
-  @apply opacity-25;
+  @apply opacity-25 text-xl;
 }
 input::placeholder:focus {
   @apply opacity-0;
