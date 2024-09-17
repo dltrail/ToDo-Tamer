@@ -4,6 +4,11 @@ import { useTodoStore } from "~/stores/todoStore";
 
 const localStore = useTodoStore();
 const title = ref("");
+const isFocused = ref(false);
+
+function handleFormFocus() {
+  isFocused.value = true;
+}
 
 function saveEdit() {
   if (title.value.trim().length === 0) {
@@ -12,8 +17,6 @@ function saveEdit() {
   localStore.addTodo(title.value.trim());
   title.value = "";
 }
-
-
 </script>
 
 <template>
@@ -44,5 +47,12 @@ function saveEdit() {
 
 .submit-button {
   @apply border p-2 bg-[var(--accent-color-2)]  text-white hover:bg-white hover:text-[var(--accent-color-2)] hover:border-[var(--accent-color-2)] text-sm shadow-sm rounded-lg;
+}
+
+input::placeholder {
+  @apply opacity-25;
+}
+input::placeholder:focus {
+  @apply opacity-0;
 }
 </style>
