@@ -33,7 +33,7 @@ const handleConfirmBtnClick = () => {
         name="i-heroicons-trash"
         class="w-4 h-4 text-[var(--primary-button-color)]"
       />
-      Clear All
+      Clear Completed ToDo'
     </button>
     <CompletedTodosList />
     <Modal
@@ -59,7 +59,7 @@ const handleConfirmBtnClick = () => {
 }
 
 .clearBtn {
-  @apply m-2 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto text-xs border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle md:top-[125px];
+  @apply mt-8 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto text-xs border p-2 border-[var(--primary-button-color)] bg-white rounded-md text-[var(--primary-button-color)] hover:opacity-90 align-middle md:top-[125px];
 }
 
 .disabled {
