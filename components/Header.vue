@@ -11,7 +11,7 @@ header {
 }
 
 h1 {
-  @apply text-6xl my-6 text-[#CD4748];
+  @apply text-6xl my-6 text-[var(--accent-color-2)];
 }
 
 p {

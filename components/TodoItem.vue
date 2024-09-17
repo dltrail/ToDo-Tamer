@@ -63,7 +63,7 @@ function saveEdit(id) {
           :disabled="todo.completed"
           aria-label="Edit Todo"
         >
-          <UIcon name="i-heroicons-pencil-square" class="w-5 h-5" />
+          <UIcon name="i-heroicons-pencil-square" class="w-5 h-5 text-[var(--accent-color-2)]" />
         </UButton>
         <UButton
           color="white"
@@ -71,7 +71,7 @@ function saveEdit(id) {
           @click="handleTodoDelete(todo.id)"
           aria-label="Delete Todo"
         >
-          <UIcon name="i-heroicons-trash" class="w-5 h-5 text-red-500" />
+          <UIcon name="i-heroicons-trash" class="w-5 h-5 text-[var(--accent-color)]" />
         </UButton>
       </div>
     </div>
@@ -118,16 +118,16 @@ function saveEdit(id) {
   @apply flex flex-col z-50 w-[100%] justify-end;
 }
 .edit-button-group {
-  @apply flex justify-end;
+  @apply flex justify-end mt-2;
 }
 .edit-input {
-  @apply w-[100%] h-16 border px-2;
+  @apply w-[100%] h-16 border px-2 border border-[var(--accent-color)];
 }
 .button--accept {
-  @apply border p-2 bg-[var(--primary-button-color)] rounded-md text-white hover:opacity-50 text-sm;
+  @apply border p-2 bg-[var(--accent-color-2)] rounded-md text-white hover:opacity-50 text-sm;
 }
 .button--cancel {
-  @apply border p-2 text-[var(--primary-button-color)] rounded-md bg-white hover:opacity-50 text-sm;
+  @apply border p-2 text-[var(--accent-color-2)] rounded-md bg-white hover:opacity-50 text-sm;
 }
 .action-buttons {
   @apply mb-4;
@@ -137,5 +137,8 @@ function saveEdit(id) {
 }
 .todo-checkbox-container label {
   @apply uppercase text-[10px] tracking-wider
+}
+:disabled {
+  @apply hidden
 }
 </style>

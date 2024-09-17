@@ -52,10 +52,10 @@
 }
 
 .button--accept {
-  @apply border p-2 bg-[var(--primary-button-color)] rounded-md text-white hover:opacity-50 text-sm;
+  @apply border p-2 bg-[var(--accent-color-2)] rounded-md text-white hover:opacity-50 text-sm;
 }
 
 .button--cancel {
-  @apply border p-2 text-[var(--primary-button-color)] rounded-md bg-white hover:opacity-50 text-sm;
+  @apply border p-2 text-[var(--accent-color-2)] rounded-md bg-white hover:opacity-50 text-sm;
 }
 </style>
