@@ -106,13 +106,13 @@ function saveEdit(id) {
 
 <style scoped>
 .todo-item {
-  @apply border-[var(--primary-color)] p-5 border w-full  relative flex flex-col md:flex-row shadow-sm rounded-lg;
+  @apply border-[var(--primary-color)] p-5 border w-full  relative flex flex-col lg:flex-row shadow-sm rounded-lg;
 }
 .todo-title {
-  @apply w-[86%] text-left;
+  @apply w-full text-left;
 }
 .todo-checkbox-container {
-  @apply absolute bottom-2 text-center md:right-[10px] gap-2 flex align-middle;
+  @apply absolute bottom-2 text-center sm:right-[10px] gap-2 flex align-middle;
 }
 .edit-form {
   @apply flex flex-col z-50 w-[100%] justify-end;
@@ -143,6 +143,6 @@ function saveEdit(id) {
 }
 
 .todo-item-content{
- @apply flex flex-col gap-2 md:flex-row items-center w-full
+ @apply flex flex-col gap-2 sm:flex-row items-center w-full
 }
 </style>
