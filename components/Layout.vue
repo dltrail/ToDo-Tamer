@@ -2,23 +2,32 @@
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+
 </script>
 <template>
   <Header />
 
   <main class="main">
     <div class="leftLayout">
-      <NuxtImg
+      <!-- <NuxtImg
+        class="tamer-image desktop"
         src="/task-tamer.svg"
         alt="Task Tamer Graphic"
         loading="lazy"sd
-      />
+      /> -->
     </div>
     <div class="rightLayout">
       <TodoForm :class="route.path === '/'? '' : 'hide'" />
       <Nav />
       <slot />
+      <NuxtImg
+        class="tamer-image mobile"
+        src="/task-tamer.svg"
+        alt="Task Tamer Graphic"
+        loading="lazy"
+      />
     </div>
+  
   </main>
   <Footer />
 </template>
@@ -42,5 +51,14 @@ const route = useRoute()
 
 .rightLayoutHeader {
   @apply fixed w-screen text-center translate-x-[-50%] left-1/2 bg-white z-50;
+}
+
+.tamer-image {
+  /* &.desktop {
+    @apply hidden fixed bottom-8 md:relative md:bottom-auto
+  } */
+  &.mobile {
+    @apply relative bottom-0 md:relative md:hidden md:bottom-auto
+  }
 }
 </style>
