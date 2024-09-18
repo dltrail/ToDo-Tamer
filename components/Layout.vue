@@ -15,6 +15,12 @@ const route = useRoute()
         alt="Task Tamer Graphic"
         loading="lazy"sd
       />
+      <NuxtImg
+        class="tamer-image desktop"
+        src="/assets/task-tamer.svg"
+        alt="Task Tamer Graphic"
+        loading="lazy"sd
+      />
     </div>
     <div class="rightLayout">
       <TodoForm :class="route.path === '/'? '' : 'hide'" />
@@ -23,6 +29,12 @@ const route = useRoute()
       <NuxtImg
         class="tamer-image mobile"
         src="/task-tamer.svg"
+        alt="Task Tamer Graphic"
+        loading="lazy"
+      />
+      <NuxtImg
+        class="tamer-image mobile"
+        src="/assets/task-tamer.svg"
         alt="Task Tamer Graphic"
         loading="lazy"
       />
