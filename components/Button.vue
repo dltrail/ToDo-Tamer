@@ -1,24 +1,20 @@
 <script setup>
-const isDisabled = ref(true);
-const hasIcon = ref(true)
-
 const props = defineProps({
   iconName: {
     type: String,
+    required: false,
+  },
+  isDisabled: {
+    type: Boolean,
     required: false,
   },
 });
 </script>
 
 <template>
-  <button class="button" :disabled="isDisabled">
-    <UIcon 
-    v-if="iconName"
-        :name="props.iconName"
-        class="button-icon"
-      />
-     
-<span><slot /></span>
+  <button class="button" :disabled="isDisabled" role="button">
+    <UIcon v-if="iconName" :name="props.iconName" class="button-icon" />
+    <span><slot /></span>
   </button>
 </template>
 
@@ -29,7 +25,7 @@ const props = defineProps({
 }
 
 .button-icon {
-@apply w-4 h-4 text-[var(--primary-button-color)] align-middle
+  @apply w-4 h-4 text-[var(--primary-button-color)] align-middle;
 }
 
 :disabled {
