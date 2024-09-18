@@ -53,6 +53,6 @@ const handleConfirmBtnClick = () => {
 }
 
 #clear-button {
-  @apply mt-8 xl:right-[130px] md:right-[20px] md:absolute md:mx-auto md:top-[125px] relative left-1/2 transform -translate-x-1/2;
+  @apply mt-8 relative left-1/2 transform -translate-x-1/2;
 }
 </style>
