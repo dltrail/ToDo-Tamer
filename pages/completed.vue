@@ -23,33 +23,24 @@ const handleConfirmBtnClick = () => {
 
 <template>
   <Layout>
-    <Button 
-    id="clear-button"
-    :disabled="completed.length === 0"
-    @click="handleToggleModalVisibility"
-    iconName="i-heroicons-trash"
-    ><span>Clear Completed ToDo</span></Button>
+    <Button
+      id="clear-button"
+      :disabled="completed.length === 0"
+      @click="handleToggleModalVisibility"
+      iconName="i-heroicons-trash"
+      ><span>Clear Completed ToDo</span></Button
+    >
     <CompletedTodosList />
-    <Modal
-      v-model="isOpen"
-      class="modal"
-      @toggleModal="handleToggleModalVisibility"
-      @acceptModal="handleConfirmBtnClick"
-    />
+    <Modal v-model="isOpen" @toggleModal="handleToggleModalVisibility"
+    @acceptModal="handleConfirmBtnClick"           />
   </Layout>
 </template>
 
 <style scoped>
-.modal {
-  @apply w-96 items-center;
-}
+
 
 .disabled {
   @apply bg-pink-50;
-}
-
-.modalInner {
-  @apply p-4  text-gray-50 h-96;
 }
 
 #clear-button {
