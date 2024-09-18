@@ -12,8 +12,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="button" :disabled="isDisabled" role="button">
-    <UIcon v-if="iconName" :name="props.iconName" class="button-icon" />
+  <button data-testid="button" class="button" :disabled="isDisabled" role="button">
+    <UIcon data-testid="button-icon" v-if="iconName" :name="props.iconName" class="button-icon" />
     <span><slot /></span>
   </button>
 </template>

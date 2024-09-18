@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > button is rendered 1`] = `
+"<button data-v-b534b83e="" data-testid="button" class="button" role="button">
+  <!--v-if--><span data-v-b534b83e="">Button text</span>
+</button>"
+`;
