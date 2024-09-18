@@ -12,7 +12,7 @@ describe('Header', () => {
     expect(header).toBeInTheDocument();
 
     // Check if the h1 and p elements have the correct content
-    const heading = getByText('Todo Tamer');
+    const heading = getByText('To-Do Tamer');
     expect(heading).toBeInTheDocument();
 
     const paragraph = getByText('Wrangle Your To-Do List Like a Pro!');
