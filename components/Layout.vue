@@ -9,12 +9,12 @@ const route = useRoute()
 
   <main class="main">
     <div class="leftLayout">
-      <!-- <NuxtImg
+      <NuxtImg
         class="tamer-image desktop"
         src="/task-tamer.svg"
         alt="Task Tamer Graphic"
         loading="lazy"sd
-      /> -->
+      />
     </div>
     <div class="rightLayout">
       <TodoForm :class="route.path === '/'? '' : 'hide'" />
@@ -38,15 +38,15 @@ const route = useRoute()
   @apply hidden
 }
 .main {
-  @apply min-h-[calc(96vh-var(--header-height))] flex flex-col-reverse md:flex-row mt-[var(--header-height)] md:overflow-hidden justify-end;
+  @apply min-h-[calc(96vh-var(--header-height))] flex flex-col-reverse lg:flex-row mt-[var(--header-height)] lg:overflow-hidden justify-end;
 }
 
 .leftLayout {
-  @apply md:w-1/2 sm:w-screen;
+  @apply lg:w-1/2 sm:w-screen;
 }
 
 .rightLayout {
-  @apply md:w-1/2 sm:w-screen text-center relative;
+  @apply lg:w-1/2 sm:w-screen text-center relative;
 }
 
 .rightLayoutHeader {
@@ -54,9 +54,9 @@ const route = useRoute()
 }
 
 .tamer-image {
-  /* &.desktop {
-    @apply hidden fixed bottom-8 md:relative md:bottom-auto
-  } */
+  &.desktop {
+    @apply hidden md:block md:relative md:bottom-auto
+  }
   &.mobile {
     @apply relative bottom-0 md:relative md:hidden md:bottom-auto
   }
