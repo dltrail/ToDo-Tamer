@@ -1,21 +1,9 @@
 <script setup lang="ts">
-// const props = defineProps({
-//   iconName: {
-//     type: String,
-//     required: false,
-//   },
-//   isDisabled: {
-//     type: Boolean,
-//     required: false,
-//   },
-// });
-
-interface Props {
-  iconName?: string;
-  isDisabled?: boolean;
-}
-
-const props = defineProps<Props>()
+  interface Props {
+    iconName?: string;
+    isDisabled?: boolean;
+  }
+  const props = defineProps<Props>()
 </script>
 
 <template>
