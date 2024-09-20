@@ -1,28 +1,31 @@
-<script setup>
+<script setup lang="ts">
 import { useTodoStore } from "~/stores/todoStore";
 import { ref } from "vue";
 import { debounce } from "lodash";
 
-const props = defineProps({
-  todo: {
-    type: Object,
-    required: true,
-  },
-});
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+const props = defineProps<{
+  todo: Todo;
+}>();
 
 const store = useTodoStore();
 const isActive = ref(false);
 const isEditting = ref(false);
 const title = ref(props.todo.title);
 
-function handleTodoDelete(id) {
+function handleTodoDelete(id:number) {
   isActive.value = true; // Directly setting value
   setTimeout(() => {
     store.deleteTodo(id);
   }, 800);
 }
 
-function handleTodoToggleCompleted(id) {
+function handleTodoToggleCompleted(id:number) {
   store.toggleTodoCompleted(id);
 }
 
@@ -34,7 +37,7 @@ const handleEdit = debounce((val) => {
   title.value = val;
 }, 300);
 
-function saveEdit(id) {
+function saveEdit(id:number) {
   store.editTodo(id, title.value);
   isEditting.value = false;
 }
@@ -59,7 +62,7 @@ function saveEdit(id) {
         <UButton
           color="white"
           v-if="!isEditting"
-          @click="handleTodoEdit(todo.id)"
+          @click="handleTodoEdit()"
           :disabled="todo.completed"
           aria-label="Edit Todo"
         >
@@ -83,7 +86,7 @@ function saveEdit(id) {
         :id="`edit-title-${todo.id}`"
         type="text"
         v-model="title"
-        @input="handleEdit($event.target.value)"
+        @input="handleEdit(($event.target as HTMLInputElement).value)"
         placeholder="Edit todo title"
       />
       <div class="edit-button-group">

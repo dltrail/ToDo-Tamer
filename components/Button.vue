@@ -1,19 +1,26 @@
-<script setup>
-const props = defineProps({
-  iconName: {
-    type: String,
-    required: false,
-  },
-  isDisabled: {
-    type: Boolean,
-    required: false,
-  },
-});
+<script setup lang="ts">
+// const props = defineProps({
+//   iconName: {
+//     type: String,
+//     required: false,
+//   },
+//   isDisabled: {
+//     type: Boolean,
+//     required: false,
+//   },
+// });
+
+interface Props {
+  iconName?: string;
+  isDisabled?: boolean;
+}
+
+const props = defineProps<Props>()
 </script>
 
 <template>
   <button data-testid="button" class="button" :disabled="isDisabled" role="button">
-    <UIcon data-testid="button-icon" v-if="iconName" :name="props.iconName" class="button-icon" />
+    <UIcon data-testid="button-icon" v-if="iconName" :name="iconName" class="button-icon" />
     <span><slot /></span>
   </button>
 </template>
